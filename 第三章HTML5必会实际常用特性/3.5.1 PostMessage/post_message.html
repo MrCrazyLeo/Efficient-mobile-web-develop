@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>消息发送端</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        ;(function(){
+            // 模拟数据
+            var messages = [
+                '今天天气很好',
+                '我跟朋友在图书馆学习',
+                '今晚要去吃点都德啊，敲开心',
+                '今天也要好好努力哦'
+            ];
+            // 随机获取messages信息
+            var getMessage = function(){
+                var index = Math.floor(Math.random()*5);
+                return messages[index] || null;
+            };
+
+            // 推送消息给接收端
+            var postMessageLoop = function(){
+                // 0到5秒随机定时
+                var randomTime = Math.floor(Math.random() * 5000);
+                setTimeout(function(){
+                    var message = getMessage();
+                    if(message !== null){
+                        // 如果消息不为null，发送消息到父页面
+                        window.parent.postMessage(message, "http://localhost:8081");
+                    }
+                    // 发送消息之后再调用自身，实现循环
+                    postMessageLoop();
+				}, randomTime);
+            }
+            postMessageLoop();
+        }());
+        </script>
+    </body>
+</html>

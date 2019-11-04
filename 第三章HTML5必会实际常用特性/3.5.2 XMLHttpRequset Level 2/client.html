@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>XMLHttpRequest Level 2 客户端</title>
+    </head>
+    <body>
+        数据：<input type="button" value="获取" />
+        <script>
+            document.querySelector("input").addEventListener("click", function(e){
+                // 阻止按钮默认提交事件
+                //e.preventDefault();
+                // 实例化XMLHttpRequest对象
+                var xhr = new XMLHttpRequest();
+                if(typeof xhr.withCredentials === undefined){
+                    console.log("浏览器不支持html5 XMLHttpRequest Level 2 的跨域请求");
+                } else{
+                    xhr.onload = function(){
+                        // 将文本转化为JSON数据
+                        var data = JSON.parse(xhr.responseText);
+                        // 显示返回数据
+                        document.querySelector("input").value = data.data;
+                    }
+
+                    // 监听错误事件
+                    xhr.onerror = function(e){
+                        console.log(e);
+                    }
+
+                    // 请求地址和方法，很明显这里跨域了（不同端口）
+                    xhr.open("GET", "http://localhost:4412", true);
+
+                    // 发送请求
+                    xhr.send();
+                }
+            });
+        </script>
+    </body>
+</html>

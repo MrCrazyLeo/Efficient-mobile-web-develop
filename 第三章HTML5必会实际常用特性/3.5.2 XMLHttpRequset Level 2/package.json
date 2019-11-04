@@ -1,0 +1,15 @@
+{
+    "name": "test",
+    "version": "0.0.1",
+    "description": "npm 启动本地服务的package.json配置",
+    "main": "index.js",
+    "scripts": {
+        "start": "http-server -a 0.0.0.0 -p 8080",
+        "clean": "shx rm -rf ./dist && shx mkdir dist",
+        "build": "npm run clean && shx cp -r *.html js css ./dist"
+    },
+    "devDependencies": {
+      "http-server": "^0.9.0",
+      "shx": "^0.1.4"
+    }
+  }

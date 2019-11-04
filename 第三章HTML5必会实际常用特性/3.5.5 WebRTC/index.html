@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WebRTC摄像头录屏并播放</title>
+    </head>
+    <body>
+        <video id="source" autoplay muted></video>
+        <video id="recorded"  controls></video>
+        <div>
+            <button id="record" disabled>开始录制</button>
+        </div>
+    </body>
+    <!-- 因为要加载adaptor，需要网络，等加载完毕之后才能 -->
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="main.js"></script>
+</html>
