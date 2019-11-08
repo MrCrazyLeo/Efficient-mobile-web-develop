@@ -14,4 +14,4 @@
 
   在下图可以看到应用Grunt之后代码体积变小，同时由于合并了小文件使得HTTP请求数变少，能更快地显示页面。
 
-  ![gruntEffect](demo\gruntEffect.png)
+  ![gruntEffect](demo/gruntEffect.png)
