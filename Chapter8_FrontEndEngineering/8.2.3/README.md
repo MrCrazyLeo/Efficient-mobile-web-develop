@@ -1,0 +1,1 @@
+**使用Grunt开发一个相册的demo**：单击页面底部缩略图，在页面中间展示对应的高清图片。通过Grunt的插件grunt-contrib-uglify压缩JavaScript文件、grunt-contrib-cssmin压缩CSS文件、grunt-inline将小图转换成base64格式并内联到Html文件、grunt-contrib-concat将多个静态文件合并成一个。这些插件大大减少HTTP请求的次数，以达到快速展示页面的目的
