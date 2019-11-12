@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MarkDown</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="theme/default.css" rel="stylesheet">
+        <link href="theme/markdown.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- 侧边文档树 -->
+        <nav>
+            <div class = "buttons">
+                <a class="icon icon-add" href="#"></a>
+            </div>
+            <div class="list-container">
+                <ul class="list"></ul>
+            </div>
+        </nav>
+
+        <main>
+            <!-- 编辑区域 -->
+            <div class="editor">
+                <div class="title">
+                    <input type="text" name="title" value="" placeholder="请输入标题" id="tbTitle" />
+                </div>
+                <div class="md-editor">
+                    <textarea placeholder="markdown编辑区，请输入markdown" id="tbMarkdown"></textarea>
+                </div>
+            </div>
+
+            <!-- 预览区域 -->
+            <div class="preview-container">
+                <div class="preview markdown-body" id="preview"></div>
+                <div class="buttons">
+                    <div href="#" id="btnSave" class="btn-save">保存</div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>  
+        <script src="src/util/db.js"></script>
+        <script src="src/main.js"></script>
+        <!-- <script src="dist/lastest/app.js"></script>   -->
+    </body>
+</html>
